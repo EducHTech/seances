@@ -34,7 +34,7 @@
   const mentors = document.createElement("a");
   mentors.className = "person-card";
   mentors.href = "../mentors.html";
-  mentors.textContent = "Mentors · Jérémie, Luca, Sophiane, Ophélie, Ruby";
+  mentors.textContent = "Mentors · Yann (coach, supervision globale), Jérémie, Ruby, Luca, Ophélie, Sophiane";
   links.append(mentors);
   navigation.append(links);
   document.querySelector("main").append(navigation);
