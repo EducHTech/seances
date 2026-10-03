@@ -1,0 +1,96 @@
+:root {
+  color-scheme: light;
+  --ink: #172b3a;
+  --muted: #526777;
+  --blue: #15334b;
+  --blue-light: #eaf2f7;
+  --teal: #087e78;
+  --line: #d6e0e7;
+  --paper: #fff;
+  --ground: #f3f6f8;
+  --warning: #fff5df;
+  --warning-line: #d5a641;
+  font-family: system-ui, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); line-height: 1.55; }
+button, input, textarea { font: inherit; }
+a { color: #075d71; }
+.topbar { padding: 1rem max(1rem, calc((100vw - 1050px) / 2)); background: var(--blue); color: white; }
+.brand { color: white; font-size: 1.05rem; font-weight: 750; letter-spacing: .04em; text-decoration: none; }
+main { width: min(100% - 2rem, 960px); margin: 2rem auto 4rem; }
+h1, h2, h3 { line-height: 1.2; }
+h1 { margin: 0 0 .75rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+h2 { margin-top: 0; color: var(--blue); }
+h3 { color: var(--blue); }
+p { margin: .5rem 0 1rem; }
+.lead { max-width: 68ch; color: var(--muted); font-size: 1.08rem; }
+.eyebrow { color: var(--teal); font-weight: 750; text-transform: uppercase; letter-spacing: .08em; }
+.card, .step, .panel { padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid var(--line); border-radius: 14px; background: var(--paper); box-shadow: 0 3px 12px rgb(21 51 75 / 5%); }
+.session-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+.session-card h2 { margin: 0 0 .4rem; }
+.session-card p { margin: 0; color: var(--muted); }
+.session-label { display: inline-block; margin-bottom: .4rem; color: var(--teal); font-size: .85rem; font-weight: 750; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: .65rem 1rem; border: 2px solid var(--blue); border-radius: 9px; background: var(--blue); color: white; font-weight: 700; text-decoration: none; cursor: pointer; }
+.button:hover { background: #244b68; color: white; }
+.button.secondary { background: white; color: var(--blue); }
+.button.secondary:hover { background: var(--blue-light); }
+.button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 1.2rem 0 1.5rem; }
+.toolbar .spacer { flex: 1; }
+.save-status { margin: 0; color: #17634d; font-size: .92rem; }
+.save-status.error { color: #9a2b20; font-weight: 700; }
+.note { margin: 1rem 0; padding: .9rem 1rem; border-left: 4px solid var(--warning-line); border-radius: 6px; background: var(--warning); }
+.section-heading { margin: 2rem 0 .8rem; }
+.step { margin: .8rem 0; }
+.step h3 { margin: 0 0 .5rem; }
+.step-number { display: inline-grid; width: 1.8rem; height: 1.8rem; margin-right: .35rem; place-items: center; border-radius: 50%; background: var(--blue-light); color: var(--blue); font-size: .9rem; }
+.check-list { display: grid; gap: .55rem; margin: .8rem 0 0; padding: 0; list-style: none; }
+.check-list label { display: flex; align-items: flex-start; gap: .65rem; font-weight: 500; }
+input[type="checkbox"], input[type="radio"] { width: 1.2rem; height: 1.2rem; margin: .15rem 0 0; accent-color: var(--teal); flex: 0 0 auto; }
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1rem; margin-top: 1rem; }
+.field { display: grid; gap: .35rem; }
+.field.full { grid-column: 1 / -1; }
+label, .label { font-weight: 700; }
+textarea { width: 100%; min-height: 6rem; padding: .65rem .75rem; border: 1px solid #91a3b0; border-radius: 8px; background: white; color: var(--ink); resize: vertical; }
+.small, .footer-note { color: var(--muted); font-size: .92rem; }
+.footer-note { margin-top: 2rem; }
+.role-summary { padding: 1rem; border-radius: 10px; background: var(--blue-light); }
+.role-summary strong { color: var(--blue); }
+.deliverable { border: 2px solid var(--teal); }
+.deliverable h2, .deliverable h3 { margin-top: 0; }
+.schedule { display: grid; grid-template-columns: 11rem 1fr; margin: 0; }
+.schedule dt, .schedule dd { margin: 0; padding: .7rem .75rem; border-bottom: 1px solid var(--line); }
+.schedule dt { color: var(--blue); font-weight: 750; }
+.schedule dt:last-of-type, .schedule dd:last-of-type { border-bottom: 0; }
+.person-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .75rem; margin: 1rem 0; }
+.person-card { display: grid; gap: .4rem; padding: 1rem; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); text-decoration: none; }
+.person-card:hover { border-color: var(--teal); background: var(--blue-light); }
+.person-card strong { color: var(--blue); font-size: 1.05rem; }
+.person-card span { color: var(--muted); }
+.team-navigation { margin-top: 2rem; padding-top: 1rem; border-top: 2px solid var(--line); }
+.team-navigation h2 { margin-bottom: .5rem; }
+.team-navigation [aria-current="page"] { border-color: var(--teal); background: var(--blue-light); font-weight: 750; }
+.radio-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+.radio-row label { display: inline-flex; align-items: center; gap: .4rem; font-weight: 500; }
+.mentor-section { border-top: 6px solid var(--warning-line); }
+.mentor-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .75rem; }
+.mentor-list > div { padding: .8rem; border: 1px solid var(--line); border-radius: 9px; }
+.offline-warning { font-size: .92rem; }
+@media (max-width: 600px) {
+  main { margin-top: 1.2rem; }
+  .schedule { grid-template-columns: 1fr; }
+  .schedule dt { padding-bottom: 0; border-bottom: 0; }
+  .schedule dd { padding-top: .15rem; }
+}
+@media print {
+  body { background: white; color: black; font-size: 10pt; }
+  .topbar, .toolbar, .footer-note, .no-print { display: none !important; }
+  main { width: 100%; margin: 0; }
+  .card, .step, .panel { box-shadow: none; break-inside: avoid; }
+  textarea { border: 0; border-bottom: 1px solid #777; border-radius: 0; padding: .2rem; }
+  textarea { min-height: 3rem; }
+  .check-list label { break-inside: avoid; }
+  h1, h2, h3 { break-after: avoid; }
+}
