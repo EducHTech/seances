@@ -15,29 +15,31 @@
     ["paul", "Paul"],
     ["prajeet", "Prajeet"]
   ];
-  const navigation = document.createElement("nav");
-  navigation.className = "team-navigation no-print";
-  navigation.setAttribute("aria-label", "Navigation dans l’équipe");
-  const heading = document.createElement("h2");
-  heading.textContent = "Naviguer dans l’équipe";
-  navigation.append(heading);
-  const links = document.createElement("div");
-  links.className = "person-list";
-  for (const [id, name] of team) {
-    const link = document.createElement("a");
-    link.className = "person-card";
-    link.href = `../roles/${id}.html`;
-    link.textContent = name;
-    if (id === studentId) link.setAttribute("aria-current", "page");
-    links.append(link);
+  if (!document.querySelector(".team-navigation")) {
+    const navigation = document.createElement("nav");
+    navigation.className = "team-navigation no-print";
+    navigation.setAttribute("aria-label", "Navigation dans l’équipe");
+    const heading = document.createElement("h2");
+    heading.textContent = "Naviguer dans l’équipe";
+    navigation.append(heading);
+    const links = document.createElement("div");
+    links.className = "person-list";
+    for (const [id, name] of team) {
+      const link = document.createElement("a");
+      link.className = "person-card";
+      link.href = `../roles/${id}.html`;
+      link.textContent = name;
+      if (id === studentId) link.setAttribute("aria-current", "page");
+      links.append(link);
+    }
+    const mentors = document.createElement("a");
+    mentors.className = "person-card";
+    mentors.href = "../mentors.html";
+    mentors.textContent = "Mentors · Yann (coach, supervision globale), Jérémie, Ruby, Luca, Ophélie, Sophiane";
+    links.append(mentors);
+    navigation.append(links);
+    document.querySelector("main").append(navigation);
   }
-  const mentors = document.createElement("a");
-  mentors.className = "person-card";
-  mentors.href = "../mentors.html";
-  mentors.textContent = "Mentors · Yann (coach, supervision globale), Jérémie, Ruby, Luca, Ophélie, Sophiane";
-  links.append(mentors);
-  navigation.append(links);
-  document.querySelector("main").append(navigation);
 
   if (!controls.length) return;
   const key = `dragons-rov-guide:${sessionId}:${studentId}`;
